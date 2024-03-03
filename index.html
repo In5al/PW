@@ -1,25 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Welcome Page</title>
+  <title>SciFi Inkie Stories</title>
+  <style>
+    /* Global styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .landing-page {
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      min-height: 100vh; /* Ensure sections fill the viewport */
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #fff;
+      color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Navigation bar */
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Welcome section */
+    .welcome-section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fade-in 2s ease-in-out;
+      z-index: 1;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Individual section styles */
+    .about {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .latest-stories {
+      background-color: #00b894;
+      color: #fff;
+    }
+
+    .featured {
+      background-color: #ffc107;
+      color: #000;
+    }
+
+    .support-me {
+      background-color: #e84118;
+      color: #fff;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .landing-page {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <header>
+    <h1>SciFi Inkie Stories</h1>
     <nav>
-      <ul>
-        <li><a href="story.html">Story</a></li>
-        <li><a href="review.html">Review</a></li>
-        <li><a href="support.html">Support</a></li>
-        <li><a href="about-me.html">About Me</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Welcome to My Page!</h1>
-    <p>Here you can find my stories, reviews, support, and more!</p>
-  </main>
-</body>
-</html>
+      <a href="#about">About</a>
+      <a href="#latest-stories">Latest Stories</a>
+      <a href="#featured">Featured</a>
+      <a href="#support-me">Support Us
+      </nav>
+    </header>
+  
+    <div class="welcome-section" id="welcome-section">
+      <h1>Welcome to Sci-Fi Inkie Stories</h1>
+      <p>Your gateway to captivating sci-fi adventures.</p>
+      <button onclick="hideWelcomeSection()">Learn More</button>
+    </div>
+  
+    <main>
+      <section class="landing-page about" id="about">
+        <h2>About Us</h2>
+        <p>
+          Sci-Fi Inkie Stories is a platform dedicated to curating and promoting the best sci-fi short stories. We believe everyone deserves to experience the wonder and excitement of science fiction.
+        </p>
+        <button>Explore Our Mission</button>
+      </section>
+  
+      <section class="landing-page latest-stories" id="latest-stories">
+        <h2>Latest Stories</h2>
+        <p>
+          Dive into a world of imagination and explore new realms with our collection of the latest sci-fi stories. Stay updated with new releases and discover hidden gems.
+        </p>
+        <button>Read Latest Stories</button>
+      </section>
+  
+      <section class="landing-page featured" id="featured">
+        <h2>Featured Stories</h2>
+        <p>
+          Embark on thrilling adventures with our handpicked selection of featured sci-fi stories. These stories showcase outstanding writing and captivating narratives.
+        </p>
+        <button>Explore Featured Stories</button>
+      </section>
+  
+      <section class="landing-page support-me" id="support-me">
+        <h2>Support Us</h2>
+        <p>
+          If you enjoy Sci-Fi Inkie Stories and wish to help us continue our mission, consider contributing. Your support allows us to keep bringing you captivating sci-fi adventures.
+        </p>
+        <button>Support on Patreon</button>
+        <button>Follow on Instagram</button>
+        <button>Like us on Facebook</button>
+      </section>
+    </main>
+  
+    <footer>
+      <p>&copy; 2024 Sci-Fi Inkie Stories</p>
+    </footer>
+  
+    <script>
+      function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+      }
+  
+      function hideWelcomeSection() {
+        document.getElementById('welcome-section').classList.add('hidden');
+      }
+    </script>
+  </body>
+  
+  </html>
+  
